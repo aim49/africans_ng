@@ -1,0 +1,123 @@
+.landing-page {
+    width: 100%;
+    background-image: linear-gradient(rgba(51, 143, 255, 0.452), #ff8c0059),
+    url("src/assets/images/bg/5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .landing-page .center-text {
+      padding-top: 80px;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing-page .center-text div h1 {
+    font-weight: 800;
+    font-size: 3em;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  .landing-page .center-text div h1 span {
+    color: var(--primary__color);
+  }
+
+  .landing-page .center-text div p {
+    color: #fff;
+  }
+
+  .landing-page .center-text div .search-bar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 15px;
+    backdrop-filter: blur(1px) saturate(180%);
+  }
+
+  .landing-page .center-text div .search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--dracula_black);
+  }
+
+  ::placeholder {
+    color: var(--primary__color);
+  }
+
+  .landing-page .center-text div .search-bar button .bi {
+    width: 25px;
+  }
+
+  .landing-page .center-text div .search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+  }
+
+  .landing-page .center-text div .search-bar button:hover{
+      background-color: var(--primary__color);
+  }
+
+  .landing-page .center-text div .search-bar button:hover .bi{
+      color: white;
+  }
+
+  .landing-page .center-text div p:last-child{
+      margin-top: 1.5rem;
+  }
+
+
+  .landing-page .center-text div p .login {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: 1px solid var(--primary__color);
+    padding: 0.4rem 1rem;
+    margin: 0 5px;
+    background-color: var(--primary__color);
+    border-radius: 25px;
+    width: 120px;
+  }
+
+  .landing-page .center-text div p .login:hover {
+    background-color: var(--dracula_black)!important;
+    color: var(--primary__color);
+  }
+
+  .landing-page .center-text div p .register {
+    color: var(--primary__color);
+    background-color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: 1px solid #fff;
+    padding: 0.4rem 1rem;
+    margin: 0 5px;
+    border-radius: 25px;
+    width: 120px;
+  }
+
+  .landing-page .center-text div p .register:hover {
+    background-color: transparent;
+    color: #fff;
+  }

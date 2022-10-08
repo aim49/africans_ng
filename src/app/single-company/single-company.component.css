@@ -1,0 +1,259 @@
+#agent-profile{
+    padding: 5rem 0;
+}
+
+#agent-profile .bg-color{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid var(--primary__color);
+}
+
+#agent-profile .profile-image{
+    height: 250px;
+    position: relative;
+}
+#agent-profile .profile-image img{
+    width: auto;
+    height: 100%;
+    padding: 1rem;
+}
+
+#agent-profile .profile-image span{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--primary__color);
+    color: #fff;
+    font-size: .8rem;
+    padding: .2rem .5rem;
+    border-radius: 5px;
+}
+#agent-profile .profile-header{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: start;
+    height: 100%;
+}
+
+#agent-profile .profile-header .core-text{
+    font-size: .9rem
+}
+
+#agent-profile .profile-header  .in-touch{
+    border-top: 1px solid rgba(128, 128, 128, 0.582);
+    padding-top: .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#agent-profile .profile-header  .in-touch p{
+    margin-bottom: 0;
+}
+
+#agent-profile .profile-header  .in-touch p span{
+    padding: 0 .3rem;
+}
+
+#agent-profile .profile-header  .in-touch p span a{
+    color: var(--primary__color);
+    transition: all .3s ease-in-out;
+}
+
+
+#agent-profile .profile-header  .in-touch p span a:hover{
+    color: var(--dracula-black);
+}
+#agent-profile  .my-listings,
+#agent-profile  .about-me{
+    margin-top: 2rem;
+    padding: 1.4rem;
+}
+
+#agent-profile  .my-listings h4.line,
+#agent-profile  .about-me h4{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.582);
+    padding-bottom: .5rem;
+
+}
+
+#agent-profile  .about-me p{
+    margin-top: 1.2rem;
+    font-size: 1rem;
+}
+
+#agent-profile .sidebox{
+    padding: 1rem;
+}
+
+#agent-profile .sidebox h5{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.582);
+    padding-bottom: .5rem;
+}
+
+#agent-profile .sidebox h5 i{
+    color: var(--primary__color);
+}
+#agent-profile .sidebox .custom-bx{
+    font-size: .8rem;
+    border-radius: 0;
+}
+
+
+#agent-profile .sidebox .custom-bx:focus,
+#agent-profile .sidebox .custom-bx:active{
+    box-shadow: none!important;
+    outline: none;
+    border-color: var(--primary__color);
+}
+
+
+#agent-profile .sidebox label{
+    font-size: .9rem;
+    color: var(--dracula-black);
+}
+
+#agent-profile .sidebox .email-send{
+    background-color: var(--primary__color);
+    outline: none;
+    border: none;
+    padding: .2rem 5rem;
+    color: #fff;
+}
+
+
+/* card listings */
+
+
+ .grid-listing-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin: 1rem 0;
+  border-bottom: 2px solid var(--primary__color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+ .grid-listing-card .img-top {
+  overflow: hidden;
+  position: relative;
+}
+ .grid-listing-card .img-top img {
+  transition: all 0.4s ease;
+  height: 250px;
+}
+ .grid-listing-card:hover .img-top img {
+  transform: scale(1.2);
+}
+
+ .grid-listing-card .img-top span:nth-child(2) {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  background-color: var(--primary__color);
+  font-size: 0.8rem;
+  color: #fff;
+}
+ .grid-listing-card .img-top span:nth-child(3) {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+ .grid-listing-card .img-top span:nth-child(4) {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+ .grid-listing-card .img-top span:nth-child(5) {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+ .grid-listing-card .img-top span:nth-child(4) small {
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+ .grid-listing-card .img-top span .close {
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  background-color: #ff0000;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+ .grid-listing-card .grid-listing-detail {
+  padding: 1rem;
+  background-color: #fff;
+}
+ .grid-listing-card .grid-listing-detail a h4 {
+  color: var(--dracula-black);
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+}
+ .grid-listing-card:hover .grid-listing-detail a h4 {
+  color: var(--primary__color);
+}
+
+ .grid-listing-card .grid-listing-detail p small {
+  color: var(--gray__color);
+}
+
+ .grid-listing-card .grid-listing-detail p small i {
+  color: var(--primary__color);
+  padding-right: 0.3rem;
+}
+
+ .grid-listing-card .grid-listing-detail .contact-owner {
+  padding-top: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+ .grid-listing-card .grid-listing-detail .contact-owner a {
+  color: var(--dracula-black);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+ .grid-listing-card .grid-listing-detail .contact-owner a i {
+  color: var(--primary__color);
+  padding-right: 0.2rem;
+}
+
+ .grid-listing-card .grid-listing-detail .features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+ .grid-listing-card .grid-listing-detail .features span small {
+  color: var(--gray__color);
+}
+
+
+
+

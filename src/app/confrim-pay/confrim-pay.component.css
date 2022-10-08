@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+#confirm-payments {
+    padding: 7rem 0;
+}
+
+
+#confirm-payments  h1{
+    color: var(--primary__color);
+}

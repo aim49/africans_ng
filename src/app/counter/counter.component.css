@@ -1,0 +1,28 @@
+
+.counterup{
+    background-image: linear-gradient(rgba(51, 143, 255, 0.596),#ff8c007a), url("src/assets/images/bg/paper.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 2em 0;
+}
+
+.counterup .counter-box .counter-icon i{
+    font-size: 3em;
+    color: #fff;
+}
+
+.counterup .counter-box .counter-text h4{
+    color: #fff;
+    font-weight: 700;
+}
+
+.counterup .counter-box .counter-text h2{
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.5em;
+}
+.counterup .counter-box .counter-text h2 span{
+    line-height: 1.20em;
+}

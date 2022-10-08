@@ -1,0 +1,95 @@
+<div class="dashboard-pg text-grey-blue">
+  <app-dashboard-top></app-dashboard-top>
+  <app-admin-navigation></app-admin-navigation>
+
+  <div class="dashboard-main">
+    <div class="container mt-5">
+      <div class="header_info mb-4 text-secondary">
+        <h3>All Properties</h3>
+      </div>
+      <div class="search-container">
+        <mat-form-field appearance="fill">
+          <input
+            matInput
+            placeholder="Search"
+            autocomplete="off"
+            (keyup)="filterData($event)"
+          />
+        </mat-form-field>
+      </div>
+      <div class="table-responsive w-100">
+        <table
+          mat-table
+          matSort
+          [dataSource]="dataSource"
+          class="mat-elevation-z8"
+        >
+          <ng-container matColumnDef="address">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.address }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="area">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>Area</th>
+            <td mat-cell *matCellDef="let element">{{ element.area }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="city">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>City</th>
+            <td mat-cell *matCellDef="let element">{{ element.city }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef>Country</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.country | titlecase }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.type | titlecase }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let element">$ {{ element.price }}</td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.status }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="btn-group" role="group">
+                <!-- <button type="button" class="btn btn-secondary">View</button> -->
+                <a
+                  href="/property?id={{ element.id }}"
+                  class="btn btn-secondary"
+                  >View</a
+                >
+                <button type="button" class="btn btn-primary">Delete</button>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator
+        #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 20, 50, 100]"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

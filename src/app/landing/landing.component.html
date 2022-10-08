@@ -1,0 +1,31 @@
+<div class="landing-page">
+  <div class="container">
+    <div class="center-text">
+      <div>
+        <h1>Find a home with <span>Africans</span>City</h1>
+        <p>We offer a variety of properties from sales to rentals?</p>
+        <form action="" class="search-bar">
+          <input
+            type="text"
+            placeholder="search for property..."
+            name="search"
+          />
+          <button type="submit"><i class="bi bi-search"></i></button>
+        </form>
+        <p
+          class="mt-5 d-flex justify-content-center align-items-center flex-row"
+        >
+          <a routerLink="/login" class="login" [hidden]="authenticated === true"
+            >Login</a
+          >
+          <a
+            routerLink="/register"
+            class="register"
+            [hidden]="authenticated === true"
+            >Signup</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

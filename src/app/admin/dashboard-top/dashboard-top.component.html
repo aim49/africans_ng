@@ -1,0 +1,36 @@
+<nav class="navigation-bar d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="navigation-bar-left col-6 d-flex align-items-center">
+        <button type="button" class="navbar-open-btn text-grey-blue me-3">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar-logo">
+          <img src="assets/images/logo/africancity.png" alt="site logo" />
+        </div>
+      </div>
+
+      <div
+        class="
+          navigation-bar-right
+          col-6
+          d-flex
+          align-items-center
+          justify-content-end
+        "
+      >
+        <a type="button" class="btn singOut" (click)="logoutSend()"
+          > Log Off  <i class="bi bi-box-arrow-left"></i> </a
+        >
+        <!-- <a href="#" class="profile-btn bg-blue text-white btn-circle me-3">
+          <i class="fas fa-user"></i>
+        </a>
+        <button type="button" class="notification-btn text-grey-blue">
+          <i class="fa-regular fa-bell"></i>
+        </button> -->
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="navigation-overlay position-fixed"></div>

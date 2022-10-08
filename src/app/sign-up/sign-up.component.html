@@ -1,0 +1,90 @@
+<div id="account-forms">
+  <div class="col-lg-3 col-md-5 col-sm-8 col-11">
+    <div class="form-card">
+      <form action="">
+        <div class="img-box">
+          <img
+            src="assets/images/logo/africancity.png"
+            alt="logo"
+            class="img-fluid"
+          />
+        </div>
+        <p class="type">Sign Up</p>
+        <p class="support">
+          <small>Enter your Credentials</small>
+        </p>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control login"
+                name="user.name"
+                [(ngModel)]="user.name"
+                placeholder="Enter Name"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control login"
+                name="user.surname"
+                [(ngModel)]="user.surname"
+                placeholder="Enter Surname"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control login"
+                name="user.email"
+                [(ngModel)]="user.email"
+                placeholder="Enter Email"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control login"
+                name="user.password"
+                [(ngModel)]="user.password"
+                placeholder="Enter Password"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <a
+                name=""
+                id=""
+                class="btn orange"
+                (click)="signUpUser()"
+                role="button"
+                >Register</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="other-options">
+          <p>
+            <span> Registered? <a class="text-primary" href="/login">Account Login</a> </span>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

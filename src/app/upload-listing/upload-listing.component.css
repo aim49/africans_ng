@@ -1,0 +1,138 @@
+#shared-style{
+	padding: 4rem 0;
+}
+
+#shared-style .shared-box{
+	background-color: rgba(128, 128, 128, 0.089);
+	padding: 2.5rem;
+}
+
+#shared-style .shared-box .essential p{
+	background-color: var(--accent-color);
+    font-weight: 300;
+    font-size: .8rem;
+    padding: .3rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#shared-style .shared-box h4{
+	font-weight: 600;
+	color: var(--dracula-black);
+}
+#profile .profile-box input:focus,
+#profile .profile-box  select:focus,
+#shared-style .shared-box textarea:focus,
+#shared-style .shared-box input:focus,
+#shared-style .shared-box select:focus{
+	box-shadow: none;
+	border-color: var(--primary__color);
+}
+#profile .profile-box input,
+#profile .profile-box  select,
+#shared-style .shared-box textarea,
+#shared-style .shared-box input,
+#shared-style .shared-box select
+{
+    border-radius: 0;
+    font-size: .9rem;
+}
+
+#profile .profile-box input::placeholder,
+#shared-style .shared-box textarea::placeholder,
+#shared-style .shared-box input::placeholder{
+    color: var(--dracula-black);
+}
+
+#shared-style .shared-box input[type="file"]{
+    display: none;
+}
+#shared-style .shared-box .img-upload label{
+    display: block;
+    position: relative;
+    background-color: var(--primary__color);
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#shared-style .shared-box .img-upload{
+	padding: 2rem 1rem;
+}
+#shared-style .shared-box .img-upload p{
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+#shared-style .shared-box #images{
+    width: 90%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+#shared-style .shared-box figure{
+    width: 45%;
+}
+#shared-style .shared-box img{
+    width: 100%;
+	height: 250px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--primary__color);
+}
+
+#shared-style .shared-box figcaption{
+    text-align: center;
+    font-size: 2.4vmin;
+    margin-top: 0.5vmin;
+}
+
+#profile .profile-box button,
+#shared-style .shared-box .submit-link button{
+	outline: none;
+	background-color: var(--primary__color);
+	border:1px solid var(--primary__color) ;
+	color: #ffff;
+	font-weight: 600;
+	padding: .5rem 1rem;
+	border-radius: 5px;
+}
+
+#shared-style .shared-box .profile-mandatory{
+    background-color: var(--accent-color);
+    font-weight: 300;
+    font-size: .8rem;
+    padding: .3rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#images > div{
+    position: relative;
+}
+
+#images .btn-remove-imnage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .3rem;
+    background-color: var(--primary__color);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#images .btn-remove-imnage i{
+    color: #ffff;
+}
+
+#images .property_images{
+height: 100px!important;
+border-radius: 5px;
+border: 1px solid var(--primary__color);
+}

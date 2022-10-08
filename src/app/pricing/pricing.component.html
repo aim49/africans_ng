@@ -1,0 +1,156 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="text-center">
+        <h1>Pricing</h1>
+        <nav class="breadcrumb justify-content-center">
+          <a class="breadcrumb-item" routerLink="/home">Home</a>
+          <span class="breadcrumb-item active" aria-current="page"
+            >Pricing</span
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- pricing -->
+<div id="pricing">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-3 col-md-4 col-sm-6 col-12"
+        *ngFor="let package of packages"
+      >
+        <div class="pricing-card">
+          <div class="icon">
+            <h3>{{ package.price }}</h3>
+          </div>
+          <div class="main-header">
+            <h5>{{ package.name }}</h5>
+            <span></span>
+          </div>
+          <div class="package-features mb-3">
+            <p
+              *ngFor="
+                let description of getBreaksFromNewLines(package.description)
+              "
+            >
+              <span>{{ description }}</span>
+            </p>
+          </div>
+          <div class="link">
+            <a
+              href="/single-package?packageId={{ package.id }}"
+              class="btn orange w-100"
+              >Payment</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="pricing-card">
+                    <div class="icon">
+                        <h3>
+                          $15
+                        </h3>
+                    </div>
+                    <div class="main-header">
+                        <h5>
+                            Bronze
+                        </h5>
+                        <span></span>
+                    </div>
+                    <div class="package-features mb-3">
+                        <p>
+                            <span>Paid Ads on Facebook</span> <span>4</span>
+                        </p>
+                        <p>
+                            <span>Newspaper Ads</span> <span>3</span>
+                        </p>
+                        <p>
+                            <span>Ads on our Website</span> <span>5</span>
+                        </p>
+                        <p>
+                            <span>Property on Website </span> <span>24/7</span>
+                        </p>
+                    </div>
+                    <div class="link">
+                        <a href="#" class="btn orange w-100">Payment</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="pricing-card">
+                    <div class="icon">
+                        <h3>
+                          $50
+                        </h3>
+                    </div>
+                    <div class="main-header">
+                        <h5>
+                            Silver
+                        </h5>
+                        <span></span>
+                    </div>
+                    <div class="package-features mb-3">
+                        <p>
+                            <span>Paid Ads on Facebook</span> <span>4</span>
+                        </p>
+                        <p>
+                            <span>Newspaper Ads</span> <span>3</span>
+                        </p>
+                        <p>
+                            <span>Ads on our Website</span> <span>5</span>
+                        </p>
+                        <p>
+                            <span>Property on Website </span> <span>24/7</span>
+                        </p>
+                    </div>
+                    <div class="link">
+                        <a href="#" class="btn orange w-100">Payment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="pricing-card">
+                    <div class="icon">
+                        <h3>
+                          $90
+                        </h3>
+                    </div>
+                    <div class="main-header">
+                        <h5>
+                            Gold
+                        </h5>
+                        <span></span>
+                    </div>
+                    <div class="package-features mb-3">
+                        <p>
+                            <span>Paid Ads on Facebook</span> <span>4</span>
+                        </p>
+                        <p>
+                            <span>Newspaper Ads</span> <span>3</span>
+                        </p>
+                        <p>
+                            <span>Ads on our Website</span> <span>5</span>
+                        </p>
+                        <p>
+                            <span>Property on Website </span> <span>24/7</span>
+                        </p>
+                    </div>
+                    <div class="link">
+                        <a href="#" class="btn orange w-100">Payment</a>
+                    </div>
+                </div>
+            </div> -->
+    </div>
+  </div>
+</div>
+
+<app-newsletter></app-newsletter>
+<app-footer></app-footer>

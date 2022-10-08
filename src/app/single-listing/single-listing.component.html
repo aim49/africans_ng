@@ -1,0 +1,407 @@
+<app-navigation></app-navigation>
+<div id="single-listing">
+  <div class="container-fluid p-0 m-0">
+    <div class="top-o">
+      <h2>{{ property.type }}</h2>
+      <p class="text-capitalize">
+        <i class="bi bi-geo-alt"></i> {{ property.address }}
+        {{ property.area }}, {{ property.city }}
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="top-elements mb-3">
+      <span>
+        <small>
+          {{ property.statusReadable | titlecase }} /
+          <a href="#">{{ property.type | titlecase }}</a> /
+          <a href="#">Property ID</a>
+        </small>
+      </span>
+      <span class="share-print">
+        <small>
+          <a href="#"> <i class="bi bi-share"></i> share</a>
+          <a href="#"><i class="bi bi-printer"></i>Print</a>
+        </small>
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+        <div class="image-inside">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item property-main-img active" *ngFor="let propertyPic of propertyPics">
+                <div>
+                  <img [src]="propertyPic" alt="" class="img-fluid d-block w-100" />
+                </div>
+                <span class="c-name"> Africanscity </span>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <span class="price-here">${{ property.price }} <small>USD</small></span>
+        </div>
+
+        <div class="main-text">
+          <div class="top-main">
+            <h4 class="single-type">
+              {{ property.type | titlecase}}
+            </h4>
+            <p class="mb-0">
+              <span>
+                <span><i class="bi bi-clock-history pe-1"></i>{{ calcDaysDifference(property.createdAt) }}</span>
+                <span><i class="bi bi-mailbox pe-1"></i>{{ property.statusReadable | titlecase }}
+                </span>
+              </span>
+            </p>
+          </div>
+
+          <div class="top-details">
+            <h5 class="mb-3">Description</h5>
+            <p class="desription">
+              {{ property.description }}
+            </p>
+          </div>
+          <div class="top-details">
+            <h5 class="mb-3">Overview Details</h5>
+            <div class="overview-list">
+              <div class="row">
+                <!-- <div class="col-md-6 col-sm-6 col-12">
+                  <p><span> Property ID:</span> <span>AC3000</span></p>
+                </div> -->
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Property Type:</span>
+                    <span>{{ property.statusReadable | titlecase }} </span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Rooms:</span> <span>{{ property.numRoom }}</span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span> Garages:</span> <span>{{ property.numGarage }}</span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Bathrooms:</span>
+                    <span>{{ property.numBathroom }}</span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Toilets:</span> <span>{{ property.numToilet }}</span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span> Area Size:</span> <span>{{ property.size }} m²</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="top-details">
+            <h5 class="mb-3">Amenities</h5>
+            <div class="overview-list amenities">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Cooling:</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Satelite :</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span> Swimming Pool:</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Lawn:</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Electricity :</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Water :</span>
+                    <span><i class="bi bi-check-all"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top-details">
+            <h5 class="mb-3">Nearby Areas</h5>
+            <div class="overview-list amenities">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>School's:</span> <span>Chitora Primary School</span>
+                  </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p><span>Shopping Malls :</span> <span>TM hyper</span></p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p><span>Main Road:</span> <span>Jason Moyo Way</span></p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                  <p>
+                    <span>Police Station:</span>
+                    <span>Hyper Police Station</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="top-details">
+            <h5 class="mb-3">Mortgage Calculator</h5>
+            <div class="overview-list Mortgage">
+              <form action="">
+                <div class="row">
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-edit" placeholder="Home Value" />
+                    </div>
+                  </div>
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-edit" placeholder="Down Payment" />
+                    </div>
+                  </div>
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-edit" placeholder="Loan Amount" />
+                    </div>
+                  </div>
+
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-edit" placeholder="Interest Rate" />
+                    </div>
+                  </div>
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <input type="text" class="form-control form-edit" placeholder="Loan Duration(years)" />
+                    </div>
+                  </div>
+
+                  <div class="div col-md-4 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <a class="btn orange w-100" data-bs-toggle="modal" data-bs-target="#mortgage">Submit</a>
+
+                      <!-- Trigger Modal To display Results -->
+                      <div class="modal fade" id="mortgage" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">
+                                Mortgage Results
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="
+                                  d-flex
+                                  justify-content-between
+                                  align-items-center
+                                ">
+                                <p>Montly Principal + Interest:</p>
+                                <p>300</p>
+                              </div>
+                              <div class="
+                                  d-flex
+                                  justify-content-between
+                                  align-items-center
+                                ">
+                                <p>Monthly Tax:</p>
+                                <p>300</p>
+                              </div>
+                              <div class="
+                                  d-flex
+                                  justify-content-between
+                                  align-items-center
+                                ">
+                                <p>Monthly Insurance:</p>
+                                <p>300</p>
+                              </div>
+                              <div class="
+                                  d-flex
+                                  justify-content-between
+                                  align-items-center
+                                  border-top border-1
+                                  pt-3
+                                ">
+                                <p class="text-primary">Total Payment:</p>
+                                <p class="text-primary">300</p>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-6 col-12">
+        <div class="listed-by text-center">
+          <h5 class="mb-3">Listing Owner</h5>
+          <div class="lister-img">
+            <img src="assets/images/png/male-avatar.png" alt="img" class="img-fluid">
+          </div>
+          <p class="lister-name mt-2">
+            <a href="#">{{ property.user.fullname }}</a>
+          </p>
+          <small [hidden]="authenticated === true"><a href="/login?returnUrl={{ currentUrl }}">Login to see contact
+              details</a></small>
+          <div class="first-contacts" [hidden]="authenticated === false">
+            <p>
+              <span><b>Inquire about property?</b></span>
+              <br />
+              <small class="inquire">
+                <a href="#"><i class="bi bi-phone"></i> {{ property.user.phone }}</a>
+              </small>
+              <br />
+              <small>
+                <a href="#"><i class="bi bi-envelope"></i> {{ property.user.email }}</a>
+              </small>
+              <span *ngFor="let contact of property.contacts">
+                <br />
+                <small>
+                  <a>{{ contact.type }}: {{ contact.value }}</a>
+                </small>
+              </span>
+            </p>
+          </div>
+        </div>
+
+
+        <!-- <div class="my-3">
+          <button class="orange btn w-100">Request Similar Property</button>
+        </div> -->
+
+
+
+        <!-- <div class="form-message listed-by mt-4">
+          <h5 class="mb-3 text-center">Send Message</h5>
+          <form action="">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control form-edit"
+                id="exampleFormControlInput1"
+                placeholder="Aim Makarudze"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="number"
+                class="form-control form-edit"
+                id="exampleFormControlInput1"
+                placeholder="263 771909952"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control form-edit"
+                id="exampleFormControlInput1"
+                placeholder="aimmak49@gmail.com"
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control form-edit"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                placeholder="I would like to request the status of the current property currently displayed?"
+              ></textarea>
+            </div>
+            <div class="contact-btn mb-3 text-center">
+              <button type="submit" class="btn">Submit</button>
+            </div>
+          </form>
+        </div> -->
+
+        <div class="form-message listed-by mt-4">
+          <h5 class="mb-3 text-center">Property Evaluations</h5>
+          <form action="">
+            <div class="mb-3">
+              <input type="text" class="form-control form-edit" id="exampleFormControlInput1"
+                placeholder="Aim Makarudze" />
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control form-edit" id="exampleFormControlInput1"
+                placeholder="Property Location Details" />
+            </div>
+            <div class="mb-3">
+              <select class="form-select form-edit" aria-label="Default select example">
+                <option selected>Category</option>
+                <option value="1">Apartment</option>
+                <option value="2">House</option>
+                <option value="3">Agricultural Land</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <input type="number" class="form-control form-edit" id="exampleFormControlInput1"
+                placeholder="263 771909952" />
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control form-edit" id="exampleFormControlInput1"
+                placeholder="aimmak49@gmail.com" />
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control form-edit" id="exampleFormControlTextarea1" rows="3"
+                placeholder="Requesting an evaluation to be made for a certain piece of property"></textarea>
+            </div>
+            <div class="contact-btn mb-3 text-center">
+              <button type="submit" class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-newsletter></app-newsletter>
+<app-footer></app-footer>

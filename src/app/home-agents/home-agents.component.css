@@ -1,0 +1,45 @@
+
+.agent{
+    padding: 4em 0 3em 0;
+}
+
+.agent .agent-text{
+    padding: 5em 0 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.agent .agent-text h2 {
+    margin-bottom: .7em;
+    color: var(--dracula-black);
+    font-weight: 500;
+}
+.agent .agent-text h2 span{
+    color: var(--primary__color);
+    font-family: var(--lora__font);
+    font-weight: 300;
+}
+.agent .agent-text p{
+    width: 80%;
+    color: var(--gray__color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+.agent .img-agent img{
+    height: 60vh;
+    margin: auto;
+    width: 100%;
+}
+
+.agent .request-btn .black-btn{
+    background-color: var(--dracula-black);
+    font-weight: 500;
+    padding: .5rem 1rem;
+    color: white;
+    transition: all .3s ease-in;
+}
+
+.agent .request-btn .black-btn:hover{
+    background-color: var(--primary__color);
+}

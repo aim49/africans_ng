@@ -1,0 +1,358 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="text-center">
+        <h1>Add Listing</h1>
+        <nav class="breadcrumb justify-content-center">
+          <a class="breadcrumb-item" routerLink="/home">Home</a>
+          <span class="breadcrumb-item active" aria-current="page">My Listing</span>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- shared styles -->
+<section id="shared-style">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-12 col-12">
+        <div class="shared-box">
+          <div class="essential">
+            <p class="m-0">
+              The following fields are mandatory: Property Description, Media
+              and Address
+            </p>
+          </div>
+          <form action="">
+            <h4 class="my-3 col-12">1. Property Description</h4>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Individual/Real Estate</label>
+                  <select class="form-select" aria-label="Default select example" name="property.role"
+                    [(ngModel)]="property.role">
+                    <option selected value="">Select</option>
+                    <option *ngFor="let role of roles" [ngValue]="role.property">
+                      {{ role.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12" [hidden]="property.role !== 'REAL_ESTATE'">
+                <div class="mb-3">
+                  <label for="" class="form-label">Real Estate Name</label>
+                  <input type="text" class="form-control" name="property.stateName" placeholder="Name of Real Estate"
+                    [(ngModel)]="property.stateName" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12" [hidden]="property.role !== 'REAL_ESTATE'">
+                <div class="mb-3 img-upload bg-white">
+                  <input id="logo-input" type="file" name="property.logoPic" accept="image/png, image/jpeg"
+                    (change)="onSelectLogoFile($event)" />
+                  <label for="logo-input">
+                    <i class="fas fa-upload"></i> &nbsp; Real Estate Logo
+                  </label>
+                  <p id="num-of-files2" [hidden]="property.logoPic !== null">
+                    No Files Chosen
+                  </p>
+                  <div id="images2" [hidden]="property.logoPic === null">
+                    <img [src]="property.logoPic" height="100" width="100" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label"> Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="Low Residential Property"
+                  />
+                </div>
+              </div> -->
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label"> Price</label>
+                  <input type="number" class="form-control" name="property.price" [(ngModel)]="property.price"
+                    placeholder="USD" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Description</label>
+                  <textarea class="form-control" name="property.description" [(ngModel)]="property.description"
+                    rows="3"></textarea>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Property Type</label>
+                  <select class="form-select" aria-label="Default select example" name="property.type"
+                    [(ngModel)]="property.type">
+                    <option selected value="">Select</option>
+                    <option *ngFor="let propertyType of propertyTypes" [ngValue]="propertyType">
+                      {{ propertyType }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Property Status</label>
+                  <select class="form-select" aria-label="Default select example" name="property.status"
+                    [(ngModel)]="property.status">
+                    <option selected value="">Select</option>
+                    <option *ngFor="let propertyStatuse of propertyStatuses" [ngValue]="propertyStatuse.property">
+                      {{ propertyStatuse.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="my-3 col-12">2. Property Location</h4>
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label"> Address</label>
+                  <input type="text" class="form-control" name="property.address" [(ngModel)]="property.address"
+                    placeholder="1212 Cowdray Park, Bulawayo" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Neighborhood/Area</label>
+                  <input type="text" class="form-control" name="property.area" [(ngModel)]="property.area"
+                    placeholder="Morning Side" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Province/City</label>
+                  <input type="text" class="form-control" name="property.city" [(ngModel)]="property.city"
+                    placeholder="Bulawayo" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Country</label>
+                  <select class="form-select" aria-label="Default select example" name="property.country"
+                    [(ngModel)]="property.country">
+                    <option selected value="">Select</option>
+                    <option *ngFor="let country of countries" [ngValue]="country.property">
+                      {{ country.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="my-3 col-12">3. Property Details</h4>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label position-relative">Property Size in m<span class="
+                        position-absolute
+                        top-0
+                        start-100
+                        translate-middle
+                        badge
+                        text-black-50
+                      ">2
+                      <span class="visually-hidden">unread messages</span></span></label>
+                  <input type="text" class="form-control" name="property.size" [(ngModel)]="property.size"
+                    placeholder="" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Bedrooms</label>
+                  <input type="number" class="form-control" name="property.numRoom" [(ngModel)]="property.numRoom"
+                    placeholder="" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Bathrooms</label>
+                  <input type="number" class="form-control" name="property.numBathroom"
+                    [(ngModel)]="property.numBathroom" placeholder="" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Garages</label>
+                  <input type="number" class="form-control" name="property.numGarage" [(ngModel)]="property.numGarage"
+                    placeholder="" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Toilets</label>
+                  <input type="number" class="form-control" name="property.numToilet" [(ngModel)]="property.numToilet"
+                    placeholder="" />
+                </div>
+              </div>
+            </div>
+            <!-- <h4 class="my-3 col-12">4. Amenities and Features</h4>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Garage / Parking
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Water
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Electricity
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Telone
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Pool
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Wifi
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <h4 class="my-3 col-12" [hidden]="editing === true">
+              4. Upload Images
+            </h4>
+            <div class="row" [hidden]="editing === true">
+              <div class="col-12">
+                <div class="img-upload bg-white">
+                  <input id="file-input" type="file" accept="image/*" name="myfile" (change)="onSelectFile($event)"
+                    multiple="multiple" style="margin-top: 30px" />
+                  <label for="file-input">
+                    <i class="fas fa-upload"></i> &nbsp; Choose A Photo
+                  </label>
+                  <p id="num-of-files">No Files Chosen</p>
+                  <div id="images">
+                    <div *ngFor="let multiple of multiples; let i = index">
+                      <img [src]="multiple" height="100" width="100" class="property_images" />
+                      <span class="btn-remove-imnage" (click)="removeImages(i)"><i class="bi bi-x"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="submit-link text-end mt-4" [hidden]="property.role === ''">
+              <button (click)="uploadListing()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end of shared styles -->
+<app-newsletter></app-newsletter>
+<app-footer></app-footer>
+<!-- sscits -->
+<!-- <script>
+  // upload images online
+  let fileInput = document.getElementsByName("myfile")[0];
+  let imageContainer = document.getElementById("images");
+  let numOfFiles = document.getElementById("num-of-files");
+
+  console.log(fileInput);
+  console.log(imageContainer);
+  console.log(numOfFiles);
+
+  function preview() {
+    imageContainer.innerHTML = "";
+    numOfFiles.textContent = `${fileInput.files.length} Files Selected`;
+
+    for (i of fileInput.files) {
+      let reader = new FileReader();
+      let figure = document.createElement("figure");
+      let figCap = document.createElement("figcaption");
+      figCap.innerText = i.name;
+      figure.appendChild(figCap);
+      reader.onload = () => {
+        let img = document.createElement("img");
+        img.setAttribute("src", reader.result);
+        figure.insertBefore(img, figCap);
+      };
+      imageContainer.appendChild(figure);
+      reader.readAsDataURL(i);
+    }
+  }
+</script> -->

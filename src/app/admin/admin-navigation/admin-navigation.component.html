@@ -1,0 +1,162 @@
+<div class="navigation-sidebar bg-white">
+  <div
+    class="navbar-sb-head d-flex justify-content-between align-items-center px-4"
+  >
+    <img src="assets/images/logo/africancity.png" height="60px" />
+    <button class="navbar-close-btn text-grey-blue">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </div>
+
+  <div class="navbar-sb-list p-4">
+    <div class="navbar-sb-item mb-5">
+      <h5 class="text-uppercase text-grey navbar-sb-item-title fs-12 ls-1">
+        Admin Options
+      </h5>
+      <ul class="navbar-sb-links p-0 list-unstyled">
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/adminlayout"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fas fa-award"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Dashboard</span
+              >
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/allUsers"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fas fa-people-group"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >All Users</span
+              >
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/allUsers"
+            [queryParams]="{ type: 'customers' }"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fas fa-people-roof"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >All Customers</span
+              >
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/allUsers"
+            [queryParams]="{ type: 'propertyOwners' }"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fas fa-user-circle"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >All Property Owners</span
+              >
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/createUser"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fa-solid fa-plus-circle"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Create Account</span
+              >
+            </div>
+            <span class="badge text-uppercase text-blue">NEW</span>
+          </a>
+        </li>
+        
+        <li class="navbar-sb-link my-3">
+          <a
+            href="#"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fa-solid fa-circle-question"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Enquiry
+              </span>
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/feedback-admin"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fa-solid fa-comments"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Feedback
+              </span>
+            </div>
+          </a>
+        </li>
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/announcements"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fa-solid fa-bullhorn"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Announcements
+              </span>
+            </div>
+          </a>
+        </li>
+
+        <li class="navbar-sb-link my-3">
+          <a
+            routerLink="/admin/createPackages"
+            class="text-decoration-none d-flex align-items-center justify-content-between"
+          >
+            <div class="text-light-blue d-flex align-items-center">
+              <span class="navbar-sb-icon me-3">
+                <i class="fa-solid fa-box"></i>
+              </span>
+              <span class="navbar-sb-text fs-14 fw-5 text-capitalize"
+                >Packages
+              </span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</div>

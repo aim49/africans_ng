@@ -1,0 +1,108 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="text-center">
+        <h1>My Properties</h1>
+        <nav class="breadcrumb justify-content-center">
+          <a class="breadcrumb-item" routerLink="/home">Home</a>
+          <span class="breadcrumb-item active" aria-current="page"
+            >My Properties</span
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- My listing -->
+
+<section id="my-listing">
+  <div class="container">
+    <div class="top-listing-d my-3 d-flex justify-content-between align-items-center">
+     <div>
+      <button class="btn orange" [disabled]="first === true" (click)="getFirstPage()">
+        First
+      </button>
+      <button class="btn orange" [disabled]="first === true" (click)="getPrevousPage()">
+        Prev
+      </button>
+      <a *ngFor=""></a>
+      <button class="btn orange" [disabled]="last === true" (click)="getNextPage()">
+        Next
+      </button>
+      <button class="btn orange" [disabled]="last === true" (click)="getLastPage()">
+        Last
+      </button>
+     </div>
+
+
+      <select
+        [(ngModel)]="size"
+        (change)="changePageSize()"
+        class="btn orange opacity-75"
+        name="size"
+      >
+        <option value="5">Page Size - 5</option>
+        <option value="10">Page Size - 10</option>
+        <option value="25">Page Size - 25</option>
+        <option value="50">Page Size - 50</option>
+        <option value="100">Page Size - 100</option>
+      </select>
+    </div>
+
+    <div class="table-responsive">
+      <table #dataTable class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Area</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let property of properties; let i = index">
+            <td>
+              <img
+                [src]="images[i]"
+                alt="image"
+                class="img-fluid"
+                width="50"
+                height="50"
+              />
+            </td>
+            <td>{{ property.address }}</td>
+            <td>{{ property.area }}</td>
+            <td>{{ property.city }}</td>
+            <td>{{ property.country }}</td>
+            <td>{{ property.type | titlecase }}</td>
+            <td>${{ property.price }}</td>
+            <td>{{ property.statusReadable | titlecase }}</td>
+            <td>
+              <div class="btn-group">
+                <a href="/property?id={{ property.id }}" class="btn btn-success"
+                  >View</a
+                >
+                <a
+                  href="/upload-listing?id={{ property.id }}"
+                  class="btn btn-primary"
+                  >Edit</a
+                >
+                <a (click)="deleteProperty(property.id)" class="btn btn-danger"
+                  >Delete</a
+                >
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<app-accordion></app-accordion>
+<app-footer></app-footer>

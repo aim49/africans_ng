@@ -1,0 +1,21 @@
+#propertiesCounter{
+    padding: 5rem 0;
+}
+
+#propertiesCounter .property-box{
+    background-color: #ff8c005e;
+    border-radius: 20px;
+    margin-bottom: .5rem;
+}
+
+#propertiesCounter .property-box h5{
+    color: var(--dracula-black);
+    font-weight: 600;
+    font-size: .9rem;
+    line-height: 1rem;
+}
+
+
+#propertiesCounter .property-box p{
+    font-size: .8rem;
+}

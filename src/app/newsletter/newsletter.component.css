@@ -1,0 +1,41 @@
+#newsletter{
+    background-color: #ff8c00cc;
+    padding: 4rem 0;
+}
+
+
+#newsletter .newsletter-text h2{
+    color: white;
+}
+
+#newsletter .newsletter-text p{
+    color: white;
+    font-weight: 300;
+    font-size: medium;
+}
+
+#newsletter .newsletter-btn button{
+    margin-top: .5rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: var(--dracula-black);
+    outline: none;
+    border: 1px solid var(--primary_color);
+    transition: all .3s ease-in;
+    color: white;
+    font-size: 1rem;
+}
+
+#newsletter .newsletter-btn button:hover{
+    background-color: white;
+    color: var(--primary_color);
+}
+
+#newsletter .modal .bi-envelope-check{
+    font-size: 5rem;
+    color: #ff8c00cc;
+}
+
+#newsletter .modal button{
+    color: #ff8c00cc;
+}

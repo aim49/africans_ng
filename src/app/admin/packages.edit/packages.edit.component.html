@@ -1,0 +1,62 @@
+<div class="dashboard-pg text-grey-blue">
+  <app-dashboard-top></app-dashboard-top>
+  <app-admin-navigation></app-admin-navigation>
+
+  <div class="dashboard-main">
+    <section id="shared-style">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-sm-12 col-12">
+            <div class="shared-box">
+              <div class="header_info">
+                <h3>Package Details</h3>
+              </div>
+
+              <form action="">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-12">
+                    <div class="mb-3">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input
+                          matInput
+                          placeholder="Package name"
+                          autocomplete="off"
+                          name="package.name"
+                          [(ngModel)]="package.name"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <mat-form-field appearance="fill" >
+                        <mat-label>Price</mat-label>
+                        <input
+                          matInput
+                          placeholder="Package price"
+                          autocomplete="off"
+                          name="package.price"
+                          type="number"
+                          [(ngModel)]="package.price"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="submit-link text-end mt-4">
+                  <button (click)="savePackage()" class="me-2">Submit</button>
+                  <a href="/admin/createPackages" class="btn btn-secondary"
+                    >Cancel</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,403 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300&display=swap");
+
+:root {
+  /* colors */
+  --primary__color: #ff8c00;
+  --gray__color: #8d8d8d;
+  --accent-color: #338fff;
+  --dracula-black: #2d3436;
+
+    --grey-primary__color: #334962;
+    --grey-color: #9ea4ac;
+    --light-primary__color: #7b92ad;
+    --light-grey-color: #f4f6fa;
+    --white-color: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* global styling components */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0px;
+  margin-bottom: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.05em;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.25em;
+}
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
+}
+h4 {
+  font-size: 1.25em;
+  line-height: 1.22222em;
+}
+p {
+  font-size: 1em;
+  line-height: 1.375em;
+}
+a {
+  font-size: 1em;
+  line-height: 1.375em;
+}
+
+.title-info h2 {
+  font-weight: 600;
+}
+.title-info h2 span {
+  color: var(--primary__color);
+  font-weight: 300;
+}
+
+.title-info {
+  padding-bottom: 2rem;
+}
+
+.orange {
+  color: white !important;
+  background-color: var(--primary__color) !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease-in !important;
+}
+
+.darker_shade {
+  color: white !important;
+  background-color: var(--dracula-black) !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease-in !important;
+  border: 1px solid var(--dracula-black);
+}
+
+.orange:hover {
+  background-color: transparent !important;
+  border: 1px solid var(--primary__color) !important;
+  color: var(--primary__color)!important;
+}
+
+.darker_shade:hover {
+  background-color: var(--white-color) !important;
+  border: 1px solid var(--dracula-black) !important;
+  color: var(--dracula-black)!important;
+}
+
+.line-dash {
+  height: 1px;
+  background: #bbbbbb;
+  width: 100%;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #fff!important;
+}
+
+/* end of global styling components */
+
+
+
+/* remove bootstrap focus on box-shadow */
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+button,
+.uneditable-input:focus {
+  border-color:  #ff8c00;
+  box-shadow: none!important;
+  outline: none;
+}
+
+
+
+
+
+/* remove bootstrap box shadow */
+
+/* hero section */
+
+#hero{
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url("src/assets/images/bg/paper.jpg");
+  background-size: cover;
+  background-position:  bottom center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#hero .hero-text > div{
+  padding-top: 6rem;
+}
+
+#hero .hero-text{
+  height:40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#hero .hero-text div h1{
+  color: white;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+#hero .hero-text div .breadcrumb-item{
+  color: white;
+}
+
+
+
+
+/* shared styles */
+
+#shared-style {
+  padding: 4rem 0;
+}
+
+#shared-style .shared-box {
+  background-color: rgba(128, 128, 128, 0.075);
+  padding: 2rem;
+}
+
+#shared-style .shared-box .essential p {
+  background-color: var(--accent-color);
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#shared-style .shared-box h4 {
+  font-weight: 600;
+  color: var(--dracula-black);
+}
+#profile .profile-box input:focus,
+#profile .profile-box select:focus,
+#shared-style .shared-box textarea:focus,
+#shared-style .shared-box input:focus,
+#shared-style .shared-box select:focus {
+  box-shadow: none;
+  border-color: var(--primary__color);
+}
+#profile .profile-box input,
+#profile .profile-box select,
+#shared-style .shared-box textarea,
+#shared-style .shared-box input,
+#shared-style .shared-box select {
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+
+#profile .profile-box input::placeholder,
+#shared-style .shared-box textarea::placeholder,
+#shared-style .shared-box input::placeholder {
+  color: var(--dracula-black);
+}
+
+#shared-style .shared-box input[type="file"] {
+  display: none;
+}
+#shared-style .shared-box .img-upload label {
+  display: block;
+  position: relative;
+  background-color: var(--primary__color);
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  padding: 18px 0;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#shared-style .shared-box .img-upload {
+  padding: 2rem 1rem;
+}
+#shared-style .shared-box .img-upload p {
+  text-align: center;
+  margin: 20px 0 30px 0;
+}
+#shared-style .shared-box #images {
+  width: 90%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#shared-style .shared-box figure {
+  width: 45%;
+}
+#shared-style .shared-box img {
+  width: 100%;
+  height: 250px;
+}
+
+#shared-style .shared-box figcaption {
+  text-align: center;
+  font-size: 2.4vmin;
+  margin-top: 0.5vmin;
+}
+
+#profile .profile-box button,
+#shared-style .shared-box .submit-link button {
+  outline: none;
+  background-color: var(--primary__color);
+  border: 1px solid var(--primary__color);
+  color: #ffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+#shared-style .shared-box .profile-mandatory {
+  background-color: var(--accent-color);
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* shared styles */
+
+/* all breakpoints */
+
+@media (max-width: 575.98px) {
+  #hero .hero-text div h1{
+    font-size: 2rem!important;
+}
+  #our-product .container img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  #we-do .we-do-header {
+    width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .property-quote .q-text h2 {
+    text-align: center !important;
+  }
+
+  .agent .agent-text p {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .agent .img-agent img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .agent .request-btn {
+    text-align: center;
+  }
+
+  .property-quote .q-box {
+    height: 50vh !important;
+  }
+
+  .property-quote .q-text p {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .property-quote .request-btn {
+    text-align: center;
+  }
+
+  .testimonials .testimonial-quote p {
+    width: 100% !important;
+  }
+
+  #company-story .about-left p,
+  #company-story .about-left h2 {
+    width: 100%;
+  }
+  #company-story .about-left {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer .footer-header,
+  .footer .footer-links {
+    text-align: center;
+  }
+  .footer .footer-img img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 1399.98px) {
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

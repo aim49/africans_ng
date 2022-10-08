@@ -1,0 +1,253 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+      <div class="hero-text">
+          <div class="text-center">
+              <h1>
+                 Your Profile
+              </h1>
+              <nav class="breadcrumb  justify-content-center">
+                  <a class="breadcrumb-item" routerLink="/home">Home</a>
+                  <span class="breadcrumb-item active" aria-current="page">Profile</span>
+              </nav>
+          </div>
+      </div>
+  </div>
+</section>
+<section id="shared-style">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-12 col-12">
+        <div class="shared-box">
+          <div class="profile-header">
+            <h5>Personal Information</h5>
+          </div>
+          <p class="profile-mandatory">
+            All the details in this section are mandatory to complete your
+            account
+          </p>
+          <form role="form">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Title</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="user.title"
+                    [(ngModel)]="user.title"
+                  >
+                    <option *ngFor="let title of titles" [ngValue]="title">
+                      {{ title }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user.name"
+                    name="user.name"
+                    placeholder=""
+                    [(ngModel)]="user.name"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user.surname"
+                    name="user.surname"
+                    placeholder=""
+                    [(ngModel)]="user.surname"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="user.email"
+                    name="user.email"
+                    placeholder=""
+                    [(ngModel)]="user.email"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Phone</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user.phone"
+                    name="user.phone"
+                    placeholder=""
+                    [(ngModel)]="user.phone"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Country</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    name="user.country"
+                    [(ngModel)]="user.country"
+                  >
+                    <option
+                      *ngFor="let country of countries"
+                      [ngValue]="country.property"
+                    >
+                      {{ country.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Date of Birth</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="user."
+                    name="user.surname"
+                    placeholder=""
+                    [(ngModel)]="user.surname"
+                  />
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">National ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    name="user.surname"
+                    placeholder=""
+                    [(ngModel)]="user.surname"
+                  />
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Company Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    name="user.surname"
+                    placeholder=""
+                    [(ngModel)]="user.surname"
+                  />
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Account Type</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Both</option>
+                    <option value="1">Agent</option>
+                    <option value="2">Real Estate Company</option>
+                  </select>
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="img-upload bg-white">
+                  <input
+                    type="file"
+                    id="file-input"
+                    accept="image/png, image/jpeg"
+                    onchange="preview()"
+                  />
+                  <label for="file-input">
+                    <i class="fas fa-upload"></i> &nbsp; Select Profile Image
+                  </label>
+                  <p id="num-of-files">No Files Chosen</p>
+                  <div id="images"></div>
+                </div>
+              </div>
+            </div>
+            <div class="submit-link text-end mt-4">
+              <button (click)="updateProfile()">Update</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="shared-box mt-5">
+          <div class="profile-header">
+            <h5>Change Password</h5>
+          </div>
+          <p class="profile-mandatory">
+            Change your password to a strong password.
+          </p>
+          <div class="alert alert-danger" [hidden]="!passwordsError">
+            {{ passwordsError }}
+          </div>
+          <form action="">
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Current Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="currentPassword"
+                    name="currentPassword"
+                    placeholder=""
+                    [(ngModel)]="currentPassword"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">New Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="newPassword"
+                    name="newPassword"
+                    placeholder=""
+                    [(ngModel)]="newPassword"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Comfirm Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder=""
+                    [(ngModel)]="confirmPassword"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="submit-link text-end mt-4">
+              <button (click)="updatePassword()">Update Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-newsletter></app-newsletter>
+<app-footer></app-footer>

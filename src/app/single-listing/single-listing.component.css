@@ -1,0 +1,246 @@
+
+#single-listing{
+    padding:0 0 4rem 0;
+
+}
+
+#single-listing .top-o{
+    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url("src/assets/images/bg/paper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:  8rem 0 3rem 0;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+#single-listing .top-o h2{
+    color:  #fff;
+    font-weight: 700;
+    font-family: var(--lora__font);
+}
+
+#single-listing .top-o p{
+    color: #fff;
+}
+#single-listing .top-o p i{
+    color: var(--primary__color);
+    padding-right: .2rem;
+}
+
+#single-listing .top-elements{
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: rgba(128, 128, 128, 0.075);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary__color);
+}
+#single-listing .top-elements > span > small > a,
+#single-listing .top-elements > span > small {
+    color: var(--dracula-black);
+    transition:  all .4s ease;
+}
+
+#single-listing .top-elements > span > small > a:hover{
+    color: var(--primary__color);
+}
+
+#single-listing .top-elements > span > small > a > i{
+    margin: 0 .2rem 0 .5rem;
+}
+
+#single-listing .image-inside{
+    position: relative;
+}
+
+#single-listing .image-inside .price-here{
+    position: absolute;
+    bottom: 0rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:var(--primary__color);
+    background-color: #fff;
+    padding: .2rem 1rem;
+}
+#single-listing .property-main-img {
+    position: relative;
+}
+
+#single-listing .property-main-img .c-name{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-weight: 700;
+        font-size: 3rem;
+        color: #fff;
+        opacity: 60%;
+}
+
+#single-listing .property-main-img > div > img{
+    height: 60vh;
+}
+
+#single-listing .listed-by h5{
+    color: var(--dracula-black);
+}
+#single-listing .listed-by .lister-name a{
+    color: var(--primary__color);
+}
+
+#single-listing .listed-by{
+    padding: 2rem;
+    background-color: rgba(128, 128, 128, 0.075);
+    border-bottom: 2px solid var(--primary__color);
+}
+.top-details p.desription{
+    line-height: 1.8!important;
+}
+
+.top-details .Mortgage input:focus,
+#single-listing .listed-by .form-edit:focus{
+    box-shadow: none;
+    border-color: var(--primary__color);
+}
+
+.top-details .Mortgage input,
+#single-listing .listed-by .form-edit{
+    border-radius: 0;
+    width: 100%;
+}
+
+.top-details .Mortgage input,
+#single-listing .listed-by .form-edit::placeholder{
+    color: var(--dracula-black);
+    font-size: .9rem;
+}
+
+#single-listing .listed-by textarea.form-edit{
+    resize: none;
+}
+
+#single-listing .listed-by .contact-btn .btn{
+    background: var(--primary__color);
+    color: #fff;
+    width: 100%;
+    border-radius: 0;
+    transform: all .4s ease;
+}
+#single-listing .listed-by .contact-btn .btn:hover{
+    background-color: var(--accent-color);
+}
+
+
+#single-listing .listed-by .lister-img img{
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    margin-bottom: .5rem;
+    border: 2px solid var(--primary__color);
+}
+#single-listing .listed-by p.lister-name a{
+    font-weight: 500;
+}
+
+#single-listing .listed-by p a{
+    color: var(--dracula-black);
+    transition: all .4s ease;
+    line-height: 1.8;
+}
+
+#single-listing .listed-by p a:hover{
+    color: var(--primary__color);
+}
+
+
+#single-listing .listed-by small i{
+    color: var(--primary__color);
+}
+
+#single-listing .main-text .top-main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+    height: auto;
+    padding: .7rem 1.1rem;
+    height: auto;
+}
+
+#single-listing .main-text .top-main .single-type{
+    font-weight: 500;
+    color: var(--dracula-black);
+}
+
+#single-listing .main-text .top-main  p span span{
+    color: #fff;
+    padding: .3rem 1rem;
+    line-height: 2.3rem;
+    font-size: .9rem;
+}
+
+#single-listing .main-text .top-main  p span span:nth-child(1){
+    background-color: var(--accent-color);
+    margin-right: .5rem;
+}
+#single-listing .main-text .top-main  p span span:nth-child(2){
+    background-color: var(--primary__color);
+}
+
+#single-listing .main-text .top-main  p  small{
+   font-size: .8rem;
+   font-weight: 500;
+   color: var(--gray__color);
+   text-align: end;
+}
+
+#single-listing .main-text .top-details{
+    padding: 2rem;
+    background-color: rgba(128, 128, 128, 0.075);
+    border-bottom: 2px solid var(--primary__color);
+    margin-bottom: 1.5rem;
+}
+#single-listing .main-text .top-details h5{
+    color: var(--dracula-black);
+}
+
+#single-listing .main-text .top-details .overview-list > div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+#single-listing .main-text .top-details .overview-list p{
+    font-weight: 500;
+    color: var(--dracula-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#single-listing .main-text .top-details .overview-list p span:nth-child(1){
+    font-weight: 400;
+}
+
+
+#single-listing .main-text .top-details .overview-list p span:nth-child(2){
+    font-weight: 400;
+    color: var(--gray__color);
+}
+
+#single-listing .main-text .top-details .overview-list p i{
+    color: var(--primary__color);
+}
+#single-listing .main-text .top-details .desription{
+    line-height: 1.5;
+    color: var(--gray__color);
+}
+
+

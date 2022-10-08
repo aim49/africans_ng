@@ -1,0 +1,49 @@
+<div class="dashboard-pg text-grey-blue">
+  <app-dashboard-top></app-dashboard-top>
+  <app-admin-navigation></app-admin-navigation>
+
+  <div class="dashboard-main">
+    <section id="shared-style">
+      <div class="container">
+        <div class="header_info">
+          <h3>View User Feedback</h3>
+        </div>
+        <div class="row mt-4">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
+            *ngFor="let feedback of feedbacks; let i = index"
+          >
+            <div class="card">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <span class="icon"><i class="bi bi-qo"></i></span>
+                  <p>
+                    {{ feedback.message }}
+                  </p>
+                  <footer class="blockquote-footer">
+                    User
+                    <cite title="Source title"
+                      >{{ feedback.user.title }} {{ feedback.user.name }}
+                      {{ feedback.user.surname }}</cite
+                    >
+                  </footer>
+                  <small>
+                    <footer class="blockquote-footer">
+                      {{ convertDateToSlashesFormat(feedback.createdAt) }}
+                    </footer>
+                  </small>
+                  <!-- <form action="" method="post">
+                    <button mat-raised-button class="me-1" color="primary">
+                      Upload
+                    </button>
+                    <button mat-raised-button color="warn">Delete</button>
+                  </form> -->
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

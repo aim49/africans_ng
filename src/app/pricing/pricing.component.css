@@ -1,0 +1,64 @@
+
+#pricing{
+    padding: 4rem 0 ;
+}
+
+
+#pricing .pricing-card{
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-top: 2px solid var(--primary__color);
+    border-bottom: 2px solid var(--primary__color);
+    margin-bottom: 1.5rem;
+}
+
+#pricing .pricing-card .package-features p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dracula-black);
+    font-weight: 300;
+}
+#pricing .pricing-card .icon h3{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    margin: 0 auto;
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+#pricing .pricing-card .main-header{
+    position: relative;
+}
+
+#pricing .pricing-card .main-header h5{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 1rem auto;
+    color: var(--primary__color);
+    background: #fff;
+    padding: .5rem .5rem!important;
+    z-index: 2;
+    width: fit-content;
+}
+
+#pricing .pricing-card .main-header span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: var(--primary__color);
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+}
+
+#pricing .pricing-card .package-features{
+    padding: 0 .5rem;
+}
+

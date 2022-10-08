@@ -1,0 +1,173 @@
+<nav class="navbar navbar-expand-lg bg-white fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="assets/images/logo/africancity.png" alt="" class="img-fluid" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+          Africans<span>city</span>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="offcanvasNavbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Sale</span><i class="ps-1 bi bi-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li *ngFor="let propertiesCount of propertiesCounts">
+                <a
+                  class="dropdown-item"
+                  href="/Properties?propertyStatus=FOR_SALE&propertyType={{
+                    propertiesCount.propertyType
+                  }}"
+                  >{{ propertiesCount.propertyType | titlecase }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="offcanvasNavbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Rent</span> <i class="ps-1 bi bi-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li *ngFor="let propertiesCount of propertiesCounts">
+                <a
+                  class="dropdown-item"
+                  href="/Properties?propertyStatus=FOR_RENT&propertyType={{
+                    propertiesCount.propertyType
+                  }}"
+                  >{{ propertiesCount.propertyType | titlecase }}</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/company-list">Agencies</a>
+          </li> -->
+
+          <!-- <li class="nav-item" [hidden]="role !== 'ADMIN'">
+            <a class="nav-link" routerLink="/admin/adminlayout">Admin</a>
+          </li> -->
+
+          <li class="nav-item" [hidden]="authenticated === true">
+            <a class="nav-link" href="/login?returnUrl={{ currentUrl }}"
+              >LogIn</a
+            >
+          </li>
+          <li class="nav-item" [hidden]="authenticated === true">
+            <a class="nav-link" routerLink="/register">Sign Up</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/upload-listing"
+              ><i class="bi bi-plus pe-1"></i>Add Listings</a
+            >
+          </li>
+          <li class="nav-item dropdown" [hidden]="authenticated === false">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="offcanvasNavbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="text-capitalize"
+                ><i class="bi bi-person-circle pe-1"></i
+                >{{ userFullName }}</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <!-- <li>
+                <a class="dropdown-item" (click)="customRouterLink('/profile')"
+                  >Profile</a
+                >
+              </li> -->
+              <!-- <li>
+                <a class="dropdown-item" (click)="customRouterLink('/favorite')"
+                  >Favorite</a
+                >
+              </li> -->
+              <li>
+                <a
+                  class="dropdown-item"
+                  (click)="customRouterLink('/myListings')"
+                  >My Properties</a
+                >
+              </li>
+              <!-- <li>
+                <a class="dropdown-item" routerLink="/request"
+                  >Requested Property</a
+                >
+              </li> -->
+              <li>
+                <a class="dropdown-item" (click)="customRouterLink('/feedback')"
+                  >Feedback</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/pricing">Pricing</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/comfirm-payment"
+                  >Confirm Payments</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="customRouterLink('/settings')"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="logoutSend()">Log Off</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

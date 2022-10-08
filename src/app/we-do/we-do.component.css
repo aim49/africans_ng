@@ -1,0 +1,41 @@
+#we-do {
+  padding: 6rem 0;
+}
+
+#we-do .we-do-header {
+  margin-bottom: 2rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dracula-black);
+}
+
+#we-do .we-do-header h3 span {
+  color: #ff8c00;
+  font-weight: 800;
+}
+
+#we-do .we-do-box {
+  background-color: #ff8c005e;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 1.3rem;
+}
+#we-do .we-do-box .icon {
+  margin-bottom: 1rem;
+}
+#we-do .we-do-box .icon .bi {
+  font-size: 3rem;
+  color: var(--dracula-black);
+}
+
+#we-do .we-do-box h5 {
+  color: var(--dracula-black);
+}
+
+
+.small-text{
+  font-size: .8rem;
+  font-weight: 300;
+}

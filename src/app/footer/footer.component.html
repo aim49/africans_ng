@@ -1,0 +1,99 @@
+<!-- footer section -->
+<div class="footer" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 col-xl-4 col-12">
+        <div class="footer-img">
+          <img
+            src="assets/images/logo/africancity.png"
+            alt="footer img"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-2 col-xl-2 col-12">
+        <h5 class="footer-header">Navigation</h5>
+        <div class="footer-links">
+          <p>
+            <a href="/Properties"><small>Listings</small></a>
+          </p>
+
+          <p>
+            <a routerLink="/about"><small>About</small></a>
+          </p>
+          <p>
+            <a routerLink="/contact"><small>Contact Us</small></a>
+          </p>
+          <p>
+            <a routerLink="/terms"><small>Terms and Conditions</small></a>
+          </p>
+          <p>
+            <a href="/upload-listing"><small>Add Listing</small></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-2 col-xl-2 col-12">
+        <h5 class="footer-header">Categories</h5>
+        <div class="footer-links">
+          <p *ngFor="let propertiesCount of propertiesCounts">
+            <a
+              href="/Properties?propertyType={{ propertiesCount.propertyType }}"
+              ><small>{{ propertiesCount.propertyType | titlecase }}</small></a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-4 col-xl-4 col-12 justify-content-md-center">
+        <h5 class="footer-header">Contact</h5>
+        <div class="footer-links">
+          <p>
+            <small>saint Barbara house 6th floor Harare, Zimbabwe</small>
+          </p>
+          <p>
+            <small><a href="#">info@africanscity.com</a></small>
+          </p>
+          <p>
+            <small
+              ><a href="#"
+                ><i class="fa fa-phone" aria-hidden="true"></i> +263 242 761
+                220</a
+              ></small
+            >
+          </p>
+          <p>
+            <small
+              ><a href="web"
+                ><i class="fab fa-whatsapp" aria-hidden="true"></i> +263 782 476
+                323</a
+              ></small
+            >
+          </p>
+
+          <ul>
+            <li>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <small>
+        Copyright &copy;2022 | All rights reserved | <a href="#">Africanscity</a>
+      </small>
+    </div>
+  </div>
+</div>

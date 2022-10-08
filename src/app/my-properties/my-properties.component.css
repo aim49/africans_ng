@@ -1,0 +1,17 @@
+#my-listing {
+  padding: 4rem 0;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  box-shadow: none !important;
+  border-radius: 0;
+}
+div.dataTables_wrapper div.dataTables_filter input:focus {
+  border: 1px solid var(--primary__color);
+}
+#grid-listing .top-listing-d {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}

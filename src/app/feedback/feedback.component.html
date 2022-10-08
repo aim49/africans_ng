@@ -1,0 +1,80 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="text-center">
+        <h1>Feedback</h1>
+        <nav class="breadcrumb justify-content-center">
+          <a class="breadcrumb-item" routerLink="/home">Home</a>
+          <span class="breadcrumb-item active" aria-current="page"
+            >feedback</span
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shared-style">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-12 col-12">
+        <div class="shared-box">
+          <div class="essential">
+            <p class="m-0">
+              Help us improve with your feedback and testimonies...
+            </p>
+          </div>
+          <form action="">
+            <h4 class="my-3 col-12">Give Us your Feedback</h4>
+            <div class="row">
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label"> Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="e.g. John Doh"
+                  />
+                </div>
+              </div> -->
+              <!-- <div class="col-md-6 col-sm-6 col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label"> Occupation</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="e.g. Real Estate Manager"
+                  />
+                </div>
+              </div> -->
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="" class="form-label">Feedback | Testimony</label>
+                  <textarea
+                    class="form-control"
+                    name="feedback.message"
+                    [(ngModel)]="feedback.message"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div
+                  class="alert alert-danger mb-3"
+                  [hidden]="!feedbackErrors.message"
+                >
+                  {{ feedbackErrors.message }}
+                </div>
+              </div>
+              <div class="submit-link text-center mt-4">
+                <button (click)="saveFeedback()">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

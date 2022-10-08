@@ -1,0 +1,54 @@
+
+#package{
+    padding: 4rem 0;
+}
+#package .package-card{
+    padding: 2.5rem 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-top: 2px solid var(--primary__color);
+    border-bottom: 2px solid var(--primary__color);
+    margin-bottom: 1.5rem;
+}
+
+#package .package-card .main-header h4{
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+#package .package-card select:focus,
+#package .package-card input:focus{
+    box-shadow: none;
+    border-color: var(--primary__color);
+}
+#package .package-card select,
+#package .package-card input{
+    border-radius: 0;
+    font-size: .9rem;
+}
+
+#package .package-card label{
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+#package .package-card .nav-tabs{
+    border: none;
+}
+#package .package-card .nav-tabs .nav-link{
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.055);
+    border-radius: 4px;
+    color: var(--accent-color);
+}
+#package .package-card .nav-tabs .nav-link.active{
+    border: none;
+    background-color: var(--primary__color);
+    color: #fff;
+}
+#package .package-card .noted{
+    padding: .5rem;
+    background-color: var(--accent-color);
+    color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+/* emd: package */

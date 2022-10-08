@@ -1,0 +1,252 @@
+<app-navigation></app-navigation>
+<section id="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="text-center">
+        <h1>PackageName</h1>
+        <nav class="breadcrumb justify-content-center">
+          <a class="breadcrumb-item" routerLink="/home">Home</a>
+          <span class="breadcrumb-item active" aria-current="page"
+            >Single Package</span
+          >
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="package">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-sm-12 col-12">
+        <div class="package-card" [hidden]="paynowsId === 0">
+          <div class="main-header">
+            <h4>Check Payment Status</h4>
+          </div>
+          <div class="tab-content" id="myTabContent">
+            <div class="form">
+              <div class="link">
+                <button
+                  class="btn orange w-100"
+                  (click)="checkPaynowStatus()"
+                  [disabled]="paynowsId === 0"
+                >
+                  Check payment status
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card" [hidden]="paynowsId !== 0">
+          <div class="main-header">
+            <h4>Payment Options</h4>
+          </div>
+          <ul
+            class="nav nav-tabs payment-options mb-4"
+            id="myTab"
+            role="tablist"
+          >
+            <li class="nav-item col-6" role="presentation">
+              <button
+                class="nav-link active"
+                id="eco-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#eco"
+                type="button"
+                role="tab"
+                aria-controls="eco"
+                aria-selected="true"
+              >
+                Mobile Money
+              </button>
+            </li>
+            <li class="nav-item col-6" role="presentation">
+              <button
+                class="nav-link"
+                id="paynow-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#paynow"
+                type="button"
+                role="tab"
+                aria-controls="paynow"
+                aria-selected="false"
+              >
+                PayNow
+              </button>
+            </li>
+          </ul>
+
+          <!-- body -->
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="eco"
+              role="tabpanel"
+              aria-labelledby="eco-tab"
+            >
+              <div class="form">
+                <p>
+                  <small
+                    >*Note all mobile money payments are done in RTGS</small
+                  >
+                </p>
+                <form action="#">
+                  <div class="row">
+                    <!-- <div class="col-6">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Currency</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          disabled
+                          placeholder="ZWL"
+                        />
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-6">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Price</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          disabled
+                          placeholder="50"
+                        />
+                      </div>
+                    </div> -->
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Months</label>
+                        <input
+                          class="form-control"
+                          id="months"
+                          name="months"
+                          [(ngModel)]="months"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label"
+                          >Mobile Money Method</label
+                        >
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          id="mobileMoneyMethod"
+                          name="mobileMoneyMethod"
+                          [(ngModel)]="mobileMoneyMethod"
+                        >
+                          <option value="" selected>
+                            --Please select method--
+                          </option>
+                          <option
+                            *ngFor="let mmm of mobileMoneyMethods"
+                            [ngValue]="mmm"
+                          >
+                            {{ mmm }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label"
+                          >Mobile Money Mobile Number</label
+                        >
+                        <input
+                          class="form-control"
+                          id="phoneNumber"
+                          name="phoneNumber"
+                          [(ngModel)]="phoneNumber"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <div class="link">
+                      <button
+                        class="btn orange w-100"
+                        (click)="confirmPaynowMobile()"
+                        [disabled]="
+                          mobileMoneyMethod === '' ||
+                          phoneNumber === 0 ||
+                          months === 0 ||
+                          !!!phoneNumber ||
+                          !!!months
+                        "
+                      >
+                        Proceed
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="paynow"
+              role="tabpanel"
+              aria-labelledby="paynow-tab"
+            >
+              <div class="form">
+                <p><small>*Pay with Paynow - USD or RTGS</small></p>
+                <form action="#">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Currency</label>
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          id="webCurrency"
+                          name="webCurrency"
+                          [(ngModel)]="webCurrency"
+                        >
+                          <option value="ZWL">ZWL</option>
+                          <option value="USD">USD</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Months</label>
+                        <input
+                          class="form-control"
+                          id="months"
+                          name="months"
+                          [(ngModel)]="months"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="noted">
+                        <small
+                          >Please select Visa/Mastercard on the paynow platform.
+                          Selecting any other option would make your payment
+                          invalid</small
+                        >
+                      </div>
+                    </div>
+                    <div class="link mt-2">
+                      <button
+                        class="btn orange w-100"
+                        (click)="confirmPaynowWeb()"
+                        [disabled]="!!!months || months === 0"
+                      >
+                        Proceed
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-newsletter></app-newsletter>
+<app-footer></app-footer>

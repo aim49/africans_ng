@@ -1,0 +1,11 @@
+.title-info h2 {
+    font-weight: 600;
+}
+.title-info h2 span{
+    color: var(--primary__color);
+    font-weight: 300;
+}
+
+.title-info{
+    padding-bottom: 2rem;
+}

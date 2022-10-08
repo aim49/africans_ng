@@ -1,0 +1,72 @@
+<div id="account-forms">
+  <div class="col-lg-3 col-md-5 col-sm-8 col-11">
+    <div class="form-card">
+      <form role="form" (submit)="loginSend()">
+        <div class="img-box">
+          <img
+            src="assets/images/logo/africancity.png"
+            alt="logo"
+            class="img-fluid"
+          />
+        </div>
+        <p class="type">Login</p>
+        <div class="alert alert-danger" [hidden]="!error">
+          There was a problem logging in. Please try again.
+        </div>
+        <p class="support">
+          <small>Enter your Credentials</small>
+        </p>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control login"
+                name="credentials.email"
+                id="email"
+                placeholder="Enter Email"
+                [(ngModel)]="credentials.email"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control login"
+                name="credentials.password"
+                id="password"
+                placeholder="Enter Password"
+                [(ngModel)]="credentials.password"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <a
+                name=""
+                id=""
+                class="btn orange"
+                role="button"
+                (click)="loginSend()"
+                >Login</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <div class="mb-3">
+              <a name="" id="" class="text-dark"     href="#" role="button">Reset</a> <span> | </span>
+              <a name="" id="" class="text-dark"    routerLink="/register" role="button">Create Account</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
